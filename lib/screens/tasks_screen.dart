@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/widgets/tasks_list.dart';
+import 'add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -11,7 +13,12 @@ class TasksScreen extends StatelessWidget {
           Icons.add,
           size: 40,
         ),
-        onPressed: null,
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => AddTaskScreen(),
+          );
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,27 +73,6 @@ class TasksScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class TasksList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(children: [
-      TaskTile(),
-    ]);
-  }
-}
-
-class TaskTile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return CheckboxListTile(
-      title: Text('Poop'),
-      value: false,
-      controlAffinity: ListTileControlAffinity.trailing,
-      onChanged: null,
     );
   }
 }
