@@ -3,6 +3,8 @@ import 'package:todoey_flutter/widgets/tasks_list.dart';
 import 'add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
+  final List<String> tasks = [];
+  final List<String> completedTasks = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
